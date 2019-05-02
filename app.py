@@ -4,7 +4,7 @@ import pandas as pd
 import spacy
 from spacy import displacy
 import en_core_web_sm
-nlp = spacy.load('en_core_web_md')
+nlp = spacy.load('en_core_web_sm')
 
 app = Flask(__name__)
 
@@ -38,8 +38,8 @@ def process():
 		elif choice == 'money':
 			results = MONEY_named_entity
 			num_of_results = len(results)
-		
-	
+
+
 	return render_template("index.html",results=results,num_of_results = num_of_results)
 
 
